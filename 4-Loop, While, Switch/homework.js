@@ -18,8 +18,8 @@ console.log('Export module');
 // }
 
 
-// browser = 'Edge'   bolsa alert = "You've got Edge!" bu code break bilan tugatilgan! 
-// Qolgan barcha caselarda alert = "Okay we support these browsers too" chunki qolgan barcha caselar ketma ketlikda yozilan hamma caselar oqilgandan keyin code tugatiladi.
+// // browser = 'Edge'   bolsa alert = "You've got Edge!" bu code break bilan tugatilgan! 
+// // Qolgan barcha caselarda alert = "Okay we support these browsers too" chunki qolgan barcha caselar ketma ketlikda yozilan hamma caselar oqilgandan keyin code tugatiladi.
 
 
 // let a = +prompt('a?', '')
@@ -49,7 +49,7 @@ console.log('Export module');
 // let i = 0;
 // while (++i < 5) alert(i)    // i ketma ket 1 taga kopayib borishi 5gacha davom etadi
 
-//          ==========
+// //      ==========
 
 // let i = 0;
 // while (i++ < 5) alert(i)   // bu holatda ham 5gacha oshib boradi double plus i dan oldin kelsa ham keyin kelsa ham bir xil tartibda ishlaydi
@@ -61,17 +61,19 @@ console.log('Export module');
 // }
 
 
+const primeNumbers = function (n) {
+    for (let i = 2; i <= n; i++) {
+        let pin = 0;
 
+        for (let k = 2; k < i; k++) {
+            if (i % k == 0) {
+                pin = 1;
+            }
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
+        if (i > 1 && pin == 0) {
+            console.log(i);
+        }
+    }
+}
+primeNumbers(100)
