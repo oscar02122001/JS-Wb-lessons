@@ -1,4 +1,4 @@
-console.log('Export module');
+// console.log('Export module');
 
 
 // let browser
@@ -18,21 +18,21 @@ console.log('Export module');
 // }
 
 
-// // // browser = 'Edge'   bolsa alert = "You've got Edge!" bu code break bilan tugatilgan! 
-// // // Qolgan barcha caselarda alert = "Okay we support these browsers too" chunki qolgan barcha caselar ketma ketlikda yozilan hamma caselar oqilgandan keyin code tugatiladi.
+// // // // browser = 'Edge'   bolsa alert = "You've got Edge!" bu code break bilan tugatilgan! 
+// // // // Qolgan barcha caselarda alert = "Okay we support these browsers too" chunki qolgan barcha caselar ketma ketlikda yozilan hamma caselar oqilgandan keyin code tugatiladi.
 
 
 // let a = +prompt('a?', '')
 
-// if (a == 0) {
-//     alert(0); ///  alert = 0  scope ichidagi code bajariladi  
-// }
-// if (a == 1) {
-//     alert(1); /// promptga 1 kiritilsa alert = 1 chunki barcha if statementar ketma ket yuqoridan o`qiladi
-// }
-// if (a == 2 || a == 3) { //  kiritilgan son 2 yoki 3 ga teng bolsa alertga '2.3' chiqariladi chunki Logical OR brinchi truely qiymatni qabul qladi.
-//     alert('2,3');
-// }
+// // if (a == 0) {
+// //     alert(0); ///  alert = 0  scope ichidagi code bajariladi  
+// // }
+// // if (a == 1) {
+// //     alert(1); /// promptga 1 kiritilsa alert = 1 chunki barcha if statementar ketma ket yuqoridan o`qiladi
+// // }
+// // if (a == 2 || a == 3) { //  kiritilgan son 2 yoki 3 ga teng bolsa alertga '2.3' chiqariladi chunki Logical OR brinchi truely qiymatni qabul qladi.
+// //     alert('2,3');
+// // }
 
 
 
@@ -60,19 +60,19 @@ console.log('Export module');
 // }
 
 
-const primeNumbers = function (n) {
-    for (let i = 2; i <= n; i++) {
-        let pin = 0;
+// const primeNumbers = function (n) {
+//     for (let i = 2; i <= n; i++) {
+//         let pin = 0;
 
-        for (let k = 2; k < i; k++) {
-            if (i % k == 0) {
-                pin = 1;
-            }
-        }
+//         for (let k = 2; k < i; k++) {
+//             if (i % k == 0) {
+//                 pin = 1;
+//             }
+//         }
 
-        if (i > 1 && pin == 0) {
-            console.log(i);
-        }
-    }
-}
-primeNumbers(100)
+//         if (i > 1 && pin == 0) {
+//             console.log(i);
+//         }
+//     }
+// }
+// primeNumbers(100)
