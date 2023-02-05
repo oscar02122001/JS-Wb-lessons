@@ -23,7 +23,7 @@
 
 
 // const pow = (x, n) => x ** n;
-// console.log(pow(1, 1));
+// console.log(pow(5, 4));
 
 
 // const ask = (question, yes, no) => {
