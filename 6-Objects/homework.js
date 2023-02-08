@@ -63,3 +63,38 @@
 // alert(user.ref.name); 
 ////  Error chiqaradi chunki ref:this undefined bogani uchun undefined qiymatdan name veribelini oqimaydi
 
+
+// const calculator = {
+//     read: function () {
+//         this.a = +prompt('Value 1?')
+//         this.b = +prompt('Value 2?')
+//     },
+
+//     sum: function () {
+//         return this.a + this.b
+//     },
+
+//     mult: function () {
+//         return this.a * this.b
+//     }
+// }
+// calculator.read()
+// alert(`Sum of the values  ${calculator.sum()}`);
+// alert(`Multiply of the values ${calculator.mult()}`);
+
+// let ladder = {
+//     step: 0,
+//     up() {
+//         this.step++;
+//     },
+//     down() {
+//         this.step--;
+//     },
+//     showStep: function () {
+//         alert(this.step)
+//     }
+// }
+
+// ladder.up()
+// ladder.showStep()
+

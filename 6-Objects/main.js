@@ -96,23 +96,23 @@ import './homework.js'
 // console.log(a);
 
 
-const user = {
-    name: " Oscar ",
-    surname: 'Tabarez',
-    year: 1991,
-    counrty: 'Brasil',
-    'work hours': 7,
-    family: {
-        mather: 'Ona',
-        father: 'Ota'
-    },
+// const user = {
+//     name: " Oscar ",
+//     surname: 'Tabarez',
+//     year: 1991,
+//     counrty: 'Brasil',
+//     'work hours': 7,
+//     family: {
+//         mather: 'Ona',
+//         father: 'Ota'
+//     },
 
 
-    fullName: function () {
-        console.log(this);
-        console.log(user.name + user.surname)
-    }
-}
+//     fullName: function () {
+//         console.log(this);
+//         console.log(user.name + user.surname)
+//     }
+// }
 
 // user.fullName()
 
@@ -124,16 +124,16 @@ const user = {
 
 // console.log(user.family?.mather);
 
-const {
-    name
-} = user
-console.log(name);
-console.log(user.family.father);
+// const {
+//     name
+// } = user
+// console.log(name);
+// console.log(user.family.father);
 
-const {
-    family: {
-        mather
-    }
-} = user
-// console.log(family);
-console.log(mather);
+// const {
+//     family: {
+//         mather
+//     }
+// } = user
+// // console.log(family);
+// console.log(mather);
