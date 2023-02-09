@@ -4,9 +4,21 @@
 //     let ones = num.split('').filter(one => one > 0).length
 //     let nil = num.split('').filter(nil => nil == 0).length
 //     console.log(`Numbers of one = ${ones} and zero = ${nil}`);
-
 // }
 // toClassify(toBinery(2323445))
+
+
+// const toClassify2 = (num) => {
+//     let ones = []
+//     let nil = []
+//     for (let i = 0; i < num.length; i++) {
+//         if (num[i] == 1) ones.push(num[i]);
+//         else if (num[i] == 0) nil.push(num[i])
+//     }
+//     console.log(`Numbers of one = ${ones.length} and zero = ${nil.length}`);
+
+// }
+// toClassify2(toBinery(5))
 
 
 // const maxMin = (...num) => Math.max(...num) - Math.min(...num);
