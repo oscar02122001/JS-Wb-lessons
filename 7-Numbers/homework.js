@@ -49,4 +49,4 @@
 //     let randomNum = Math.trunc(Math.random() * (max - min)) + min
 //     console.log(randomNum);
 // }
-// randomIn(10, 20)
+// randomIn(10, 20) 
