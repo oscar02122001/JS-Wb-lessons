@@ -21,25 +21,27 @@ const check = function (str1, str2) {
 
 //2
 
+
 const getCounter = function (str) {
-    let a = str.split('')
-    console.log(a);
+    let a = str.toLowerCase().split('')
     let obj = {}
 
     for (const key of a) {
         obj[key] = a
     }
     for (let [key, value] of Object.entries(obj)) {
+        let n = ''
         for (let i = 0; i < value.length; i++) {
             if (key === value[i]) {
-                obj[key] = value[i]
+                n += value[i]
+                obj[key] = n.length
             }
         }
     }
     console.log(obj);
 }
 
-// getCounter('oliomjoiin');
+// getCounter('WebBrain Academy');
 
 //3
 
