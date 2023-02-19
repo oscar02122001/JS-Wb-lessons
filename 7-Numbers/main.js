@@ -36,25 +36,25 @@ import './homework.js'
 
 // console.log(Math.abs(23-45));
 
-// let num = 8
+// let num = 8.6567
 // console.log(Math.floor(num));
 // console.log(Math.ceil(num));
 // console.log(Math.round(num));
 
-// console.log(Math.ceil(Math.random() * (20-10)) + 10);
-// console.log(Math.max(12, 45, 546, 12, 356, 1000));
-// console.log(Math.min(12, 45, 546, 12, 356, 1000));
+// // console.log(Math.ceil(Math.random() * (20-10)) + 10);
+// // console.log(Math.max(12, 45, 546, 12, 356, 1000));
+// // console.log(Math.min(12, 45, 546, 12, 356, 1000));
 
-// console.log(Math.pow(num, 3));
-// console.log(num ** 3);
-// console.log(Math.sign(num));
-// console.log(Math.sqrt(num));
-// console.log(Math.cbrt(num));
-// console.log(num.toString());
+// // console.log(Math.pow(num, 3));
+// // console.log(num ** 3);
+// // console.log(Math.sign(num));
+// // console.log(Math.sqrt(num));
+// // console.log(Math.cbrt(num));
+// // console.log(num.toString());
 
-// let num = 2.3443
-// console.log(num.toFixed(3));
-// console.log(num.toPrecision(3));
+// // let num = 3.34
+// console.log(num.toFixed(1));
+// console.log(num.toPrecision(2));
 
 // console.log(parseInt(num));
 // console.log(parseFloat(num));

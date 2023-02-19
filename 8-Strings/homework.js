@@ -39,7 +39,7 @@ const getCounter = function (str) {
     console.log(obj);
 }
 
-getCounter('oliomjoiin');
+// getCounter('oliomjoiin');
 
 //3
 
