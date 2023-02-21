@@ -105,3 +105,47 @@ const capitilize = function (str) {
 
 }
 // capitilize('london is blue')
+
+let t = 'webBbr32132$&^#ain Academy'
+// let upper = 0
+// let lower = 0
+// for (let n of t) {
+//     let y = n.toUpperCase()
+//     if (n === ' ') continue
+//     if (y === n) upper++
+//     else lower++
+
+//     // if (n === y)
+// }
+// console.log(`upper: ${upper}
+// lower:${lower}`);
+
+let obj = {
+    number: 0,
+    letter: 0,
+    char: 0
+}
+
+for (let i of t) {
+    console.log();
+    let lower = i.toLowerCase()
+    if (i === ' ') continue
+    if (!isNaN(i)) obj.number++
+    // if(type)
+    else if (lower !== i.toLocaleUpperCase()) obj.letter++
+    else obj.char++
+}
+// console.log(obj);
+
+let arr = ['webraihgjn', 'academy']
+let arrJoin = arr.join('').split('')
+let obj1 = {}
+for (let k of arrJoin) {
+    let lower = k.toLowerCase()
+    if (obj1[lower]) {
+        obj1[lower]++
+    } else {
+        obj1[lower] = 1
+    }
+}
+// console.log(obj1);
