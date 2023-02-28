@@ -1,3 +1,5 @@
+'use strict'
+
 ///// Strings 💥 
 
 ///1
@@ -29,17 +31,16 @@ changeLellers('Webbr@in Ac@demy')
 
 //3       🚩🚩🚩
 
-// let str1 = 'webbbraiiin accaddemmy'
-// let arr = str1.split('')
-// console.log(arr);
-
-// for (let i = 0; i < arr.length; i++) {
-//     if (arr[i] === ' ') continue;
-//     if (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) {
-//         console.log(arr[i]);
-//     }
-// }
-
+const duplicateWords = (str) => {
+    let arr = str.split('')
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[i + 1]) {
+            arr.splice(i, 2)
+        }
+    }
+    console.log(arr.join(''));
+}
+duplicateWords('webbbraiiin accaddemmy')
 
 //4
 const getNumbers = (str) => {
@@ -93,29 +94,9 @@ Pictures, chartsand other images are not text.`)
 
 //9      🚩🚩🚩
 
-// const zipStr = (str) => {
-//     let arr = str.split('')
 
-// }
-// zipStr('oosccaaar')
+/////////////////////////////.....
 
-// let str = 'webbraaiiin'
-// let arr = str.split('')
-// let arr1 = []
-// console.log(arr);
-// let obj = {}
-// for (let k of str) {
-//     console.log(str.lastIndexOf(k) - str.indexOf(k) + 1);
-//     let lower = k.toLowerCase()
-//     if (obj[lower]) obj[lower]++
-//     else obj[lower] = 1
-// }
-// let c = ''
-// for (let [key, value] of Object.entries(obj)) {
-//     if (value === 1) c += `${key}`
-//     else c += `${key}${value}`
-// }
-// console.log(c);
 
 
 ///// Objects 💥 
@@ -134,7 +115,7 @@ const getKeys = function (obj) {
     for (let k in obj) keys.push(k)
     console.log(keys);
 }
-getKeys(obj)
+// getKeys(obj)
 
 
 //2
@@ -153,14 +134,40 @@ const obj1 = {
 };
 
 
-const n = (obj) => {
-    let arrCountAge = 0
-    Object.keys(obj).forEach(key => {
-        if (typeof obj[key] === 'object') {
-            n(obj[key])
-        }
-    })
-    arrCountAge += obj.age
-    console.log(arrCountAge);
+
+const calcAge = (obj) => {
+    let arr = [obj.age]
+    const inner = (obj) => {
+        Object.keys(obj).map(key => {
+            if (typeof obj[key] === 'object') arr.push(inner(obj[key]));
+        })
+        return obj.age
+    }
+    inner(obj)
+    console.log(arr.reduce((cur, value) => cur + value));
 }
-n(obj1);
+calcAge(obj1)
+
+
+
+
+
+// let date = new Date()
+// const date1 = new Date(2001, 11, 2, 23, 0)
+// console.log(date);
+// console.log(date1);
+// console.log((date.getMonth() + 1));
+// console.log();
+// let day = (date - date1) / (1000 * 60 * 60)
+// console.log(parseInt(day));
+
+// const perDate = new Date()
+// const options = {
+//     hour: 'numeric',
+//     minute: 'numeric',
+//     day: 'numeric',
+//     month: 'long',
+//     year: 'numeric',
+//     weekday: 'long',
+// }
+// const intDate = new Intl.DateTimeFormat('eng-Uz', options).format(perDate)
