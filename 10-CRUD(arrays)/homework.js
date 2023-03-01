@@ -32,13 +32,20 @@ changeLellers('Webbr@in Ac@demy')
 //3       🚩🚩🚩
 
 const duplicateWords = (str) => {
-    let arr = str.split('')
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === arr[i + 1]) {
-            arr.splice(i, 2)
-        }
+    let str1 = ''
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] == str[i + 1]) continue;
+        else str1 += str[i]
     }
-    console.log(arr.join(''));
+    console.log(str1);
+
+    // let arr = str.split('')
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] === arr[i + 1]) {
+    //         arr.splice(i, 1)
+    //     }
+    // }
+    // console.log(arr.join(''));
 }
 duplicateWords('webbbraiiin accaddemmy')
 
@@ -120,15 +127,15 @@ const getKeys = function (obj) {
 
 //2
 
-const obj1 = {
+let obj1 = {
     name: 'Mikel',
     age: 44,
     child: {
         name: 'Jonas',
-        age: 23,
+        age: 25,
         child: {
             name: 'Artur',
-            age: 5
+            age: 5,
         }
     }
 };
@@ -147,6 +154,61 @@ const calcAge = (obj) => {
     console.log(arr.reduce((cur, value) => cur + value));
 }
 calcAge(obj1)
+
+//3
+
+let obj3 = {
+    id: 1,
+    name: 'WebBrain',
+    offline: true,
+    online: true,
+    individual: false
+}
+
+const getBoolean = (obj) => {
+    Object.keys(obj).forEach(key => {
+        if (typeof obj[key] === "boolean") {
+            console.log(key, obj[key]);
+        }
+    })
+}
+getBoolean(obj3)
+
+///// Arrays' 💥 
+
+////1
+
+let num = [2, 3, 5, 8, 8, 8, 3, 2, 3, 6, 5, 5, 5, 8, 7, 6, 6, 6]
+
+
+//// First way
+const sortArray = (arr) => {
+    let sortNum = arr.sort((a, b) => a - b)
+    for (let i = 0; i < sortNum.length; i++) {
+        let first = sortNum.indexOf(sortNum[i]);
+        let last = sortNum.lastIndexOf(sortNum[i])
+        sortNum.splice(first, (last - first));
+    }
+    console.log(sortNum);
+}
+sortArray(num)
+
+///Second way
+const sortArray2 = (arr) => {
+    let sortedArr = []
+    for (let i = 0; i < arr.length; i++) {
+        if (sortedArr.indexOf(arr[i] === -1)) sortedArr.push(arr[i])
+    }
+    console.log(sortedArr);
+}
+sortArray2(num)
+
+
+
+
+
+
+
 
 
 
