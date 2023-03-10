@@ -156,10 +156,36 @@ const nameSort = (cars) => {
 
 //7 
 const betweenYears = function (cars, fromYear, toYear) {
-    let res = cars.filter((car) => fromYear <= car.year && car.year <= toYear ? 
-    console.log(`Name: ${car.name}, year: ${car.year}`) : '')
+    let res = cars.filter((car) => fromYear <= car.year && car.year <= toYear ?
+        console.log(`Name: ${car.name}, year: ${car.year}`) : '')
     return res
 }
 // betweenYears(users, 2010, 2020)
 
+
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// const str = movements.sort((a, b) => a - b)
+// console.log(str);
+
+// for (const [i, movement] of movements.entries()) {
+//     const type = movement > 0 ? 'deposit' : 'withdrew';
+//     if (movement > 0) {
+//         console.log(`Movement ${i+1}: You ${type} ${movement}`);
+//     } else {
+//         console.log(`Movement ${i+1}: You ${type} ${Math.abs(movement)}`);
+//     }
+// }
+// console.log('---FOREACH---');
+// movements.forEach(function (movement, i, arr) {
+//     // console.log(arr);
+//     if (movement > 0) {
+//         console.log(`Movement ${i+1}: You deposited ${movement}`);
+//     } else {
+//         console.log(`Movement ${i+1}: You withdrew ${Math.abs(movement)}`);
+//     }
+// });
+
+
+// console.log(newArr);
 
