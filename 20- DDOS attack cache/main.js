@@ -1,28 +1,39 @@
 import './homework.js'
 
-let user = {
-    name: 'oscar',
-    age: 45,
-    id: 143565
-}
+const btn = document.querySelector('.btn')
+const num = document.querySelector('.num')
 
-// console.log(user.id);
-// user.id = 67854
-// console.log(user.id);
-
-console.log(Object.getOwnPropertyDescriptor(user, 'name'));
-user.name = 'John'
-console.log(user);
-// for (let k in user) {
-//     console.log(k);
+// let getData = function (a) {
+//     return fetch(`https://jsonplaceholder.typicode.com/users/${a}`)
+//         .then(res => res.json()).then(data => console.log(data))
 // }
 
-// delete user.age
-// console.log(user);
+let user = {
+    id: 6,
+    getData(a) {
+        return fetch(`https://jsonplaceholder.typicode.com/users/${this.id}`)
+            .then(res => res.json()).then(data => console.log(data))
+    }
+}
+// getData()
 
-Object.defineProperty(user, "name", {
-    writable: false
-});
+const getCached = function (func) {
+    let cache = new Map();
+    return function (x) {
+        if (cache.has(x)) {
+            console.log(cache);
+            return cache.get('x')
 
-user.name = 'Jonas';
-console.log(user);
+        } else {
+            let res = func.call(this)
+            return cache.set(x, res)
+        }
+    }
+}
+
+user.getData = getCached(user.getData)
+
+
+btn.addEventListener('click', () => {
+    user.getData()
+})
