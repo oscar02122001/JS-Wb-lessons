@@ -30,10 +30,8 @@ const umumiy = function (group, id) {
     console.log(id);
 }
 
-// umumiy.call(st, 'St-234', 235)
+
 // umumiy.call(st1, 'EKR-80', 579)
-
 // umumiy.apply(st, ['St-234 ', 235])
-
 let bind = umumiy.bind(st, 'ET-456', 345)
 bind()
