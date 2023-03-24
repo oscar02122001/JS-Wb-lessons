@@ -5,9 +5,12 @@ let obj1 = {
     name: "WebBrain"
 }
 
-for (key in obj1) {
-    console.log(key);
+const findKeys = (obj) => {
+    for (key in obj) {
+        console.log(key);
+    }
 }
+// findKeys(obj1)
 
 
 // no2
@@ -17,9 +20,13 @@ let obj2 = {
     name: "WebBrain"
 }
 
-for (key in obj2) {
-    if (obj2[key] * 1) console.log(key);
+let getNumber = (obj) => {
+    for (key in obj) {
+        if (obj[key] * 1) console.log(key, typeof obj[key]);
+    }
 }
+// getNumber(obj2)
+
 
 // No3
 // object valuelarining boolean tipidagi malumotlrini qaytaring keylari bn biriga
@@ -31,9 +38,13 @@ let obj3 = {
     individual: false
 }
 
-for (key in obj3) {
-    if (typeof obj3[key] === 'boolean') console.log(`${key}: ${obj3[key]}`);
+const getBoolean = function (obj) {
+    for (key in obj) {
+        if (typeof obj[key] === 'boolean') console.log(`${key}: ${obj[key]}`);
+    }
 }
+// getBoolean(obj3)
+
 
 
 // No4
@@ -51,7 +62,7 @@ function Search(obj, str) {
         if (obj[value] === str) console.log(`${value}: ${obj[value]}`);
     }
 }
-Search(obj4, 'WebBrain')
+// Search(obj4, 'WebBrain')
 
 
 // No5
@@ -72,7 +83,7 @@ function searchValue(obj, value) {
     }
 
 }
-searchValue(obj5, 'i')
+// searchValue(obj5, 'i')
 
 
 // No6
@@ -108,7 +119,7 @@ function calcAges(obj) {
     let totalAge = sum.reduce((cur, val) => cur + val, 0)
     console.log(`Total Age: ${totalAge}`);
 }
-calcAges(person)
+// calcAges(person)
 
 
 // No7
@@ -208,27 +219,132 @@ let copyObj9 = {
     ...obj9
 }
 
-obj9.isAdmin = false;
-console.log(copyObj9);
-console.log(obj9);
+// obj9.isAdmin = false;
+// console.log(copyObj9);
+// console.log(obj9);
 
 
 
 // No10
 // objectga yangi qiymat qo'shuvchi funksiya yozing
 
-function add(obj, key, value) {
-    
+let obj10 = {
+    name: 'oscar',
+    age: 21
 }
-add(obj, 'address', 'toshkent')
+
+function add(obj, key, value) {
+    let newAdd = Object.fromEntries([
+        [key, value]
+    ])
+    console.log(Object.assign(obj, newAdd));
+}
+// add(obj10, 'address', 'toshkent')
 
 // No11
 // agar object ichida practice 1 dan katta bolsa 'qabul qilindi'.aks holda 'ming bor uzur.'
-let obj = {
+let obj11 = {
     id: 1,
     name: 'Usmon',
     job: 'developer',
     practice: 1
 }
-// chiqish
-// qabul qilindi
+
+const practice = function (obj) {
+    for (key in obj11) {
+        if (key === 'practice') {
+            if (obj11[key] >= 1) console.log('Qabul qlindi');
+            else console.log('Joy yoq');
+        }
+    }
+}
+// practice()
+
+// No12
+// agar object ichida talaba bolsa objectga {kiridit:true} key va value qoshilsin aks holsa {kiridit:olinmadi} qoshilsin
+let obj12 = {
+    id: 1,
+    name: 'Usmon',
+    job: 'developer',
+    practice: 1,
+    talaba: true
+}
+
+const isTalaba = (obj) => {
+    for (key in obj) {
+        if (key === 'talaba') {
+            obj.kiridit = true
+        } else obj.kiridit = 'olinmadi'
+    }
+    return console.log(obj);
+}
+
+// isTalaba(obj12)
+
+// No13
+// object ichida tugilgan yil,hozirgi yoshi malumotlari keltirilgan. agar yosh togri bolmasa 'xato malumot kiritdingiz' chiqarilsin
+let obj13 = {
+    id: 1,
+    name: 'Usmon',
+    age: 34,
+    year: 1990
+}
+
+const ageCheck = (obj) => {
+    let rightAge = new Date().getFullYear() - obj.year;
+    if (rightAge !== obj.age) console.log('Samthing went wrong');
+}
+// ageCheck(obj13);
+
+
+// No14
+// talaba oz malumotlarini toldirmoqda. sizga object va massiv berilgan. massiv ichida uzbekiston viloyatlari berilgan. agar talaba massiv ichidagi viloyatlardan boshqa tanlasa bizning filallarimiz faqat shu viloyatlarda degan natija chiqsin.
+arr14 = ['Andijon', 'Namangan', 'Qarshi', 'Toshkent']
+
+const smth = (city) => {
+    let firstUpper = city.split('')[0].toUpperCase() + city.slice(1)
+    if (!arr14.includes(firstUpper)) console.log(`Bizning filiallarimiz faqat ${arr14} da bor`);
+}
+// smth('samarqand')
+
+
+// No15
+// talabalar malumotlari massiv berilgan. massiv objectlardan tashkil topgan. objectda login parol keltirilgan.
+// funksiyaga login va parol jonatiladi.
+// agar login parol togri bolsa 'hush kelibsiz' aks holda 'login yoki parol xato degan qiymat chiqazing'
+let arr15 = [{
+        id: 3,
+        name: 'Usmon',
+        parol: '1231'
+    },
+    {
+        id: 1,
+        name: 'Umar',
+        parol: '1241'
+    },
+    {
+        id: 5,
+        name: 'Jasur',
+        parol: '3452'
+    },
+    {
+        id: 2,
+        name: 'Asmo',
+        parol: '2312'
+    },
+    {
+        id: 4,
+        name: 'Salohiddin',
+        parol: '3421'
+    },
+]
+// logIn('Umar','2113') => xato
+// logIn('Salohiddin','3421') => hush kelibsiz
+
+const logIn = (lg, pw) => {
+    return arr15.filter(x => x.name === lg && x.parol === pw)
+    // return arr15
+}
+// console.log(logIn('Asmo', '2312'));
+logIn('Umar', '2113')
+logIn('Salohiddin', '3421')
