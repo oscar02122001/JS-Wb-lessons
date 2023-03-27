@@ -1,83 +1,98 @@
 import './homework.js'
 
-// let gr = getData(3)
+// - generator function  
+// - yield, return
+// —.next va.return properties 
+// — loop with generator
+// - ID generating with generator
 
-// let res = [...generator]
-// console.log(res);
+//!-- yield
 
-// console.log(generator(3).next().value);
-// console.log(generator.next().value);
-// console.log(generator.next().value);
-// console.log(generator.next().value);
-
-// console.log(gr.next());
-
-
-// let users = [{
-//         id: 1,
-//         name: "id1"
-//     },
-//     {
-//         id: 2,
-//         name: "id2"
-//     },
-//     {
-//         id: 3,
-//         name: "id3"
-//     },
-//     {
-//         id: 4,
-//         name: "id4"
-//     },
-//     {
-//         id: 5,
-//         name: "id5"
-//     },
-//     {
-//         id: 6,
-//         name: "id6"
-//     },
-// ]
-// console.log(users);
-
-// function* getData() {
-//     let i = users.length;
-//     // let i = 0;
-//     while (true) {
-//         yield i++;
-//     }
-// }
-
-
-// let generator = getData()
-
-// let deleteUsr = (id) => {
-//     users = users.filter(usr => usr.id !== id)
-// }
-
-// let addUsr = (usr) => {
-//     users = [...users, {
-//         id: generator.next().value + 1,
-//         name: usr
-//     }]
-// }
-// deleteUsr(3)
-// addUsr('sdfsfs')
-// addUsr('oscar1')
-// addUsr('oscar2')
-// deleteUsr(6)
-// console.log(users);
-
-
-function* getData(v) {
-    let i = 0;
-    while (true) {
-        let gn = yield i++;
-        if (gn) i += gn
-    }
+function* data() {
+    yield 1
+    yield 2
+    yield 3
 }
 
-let generator = getData()
-console.log(generator.next());
-console.log(generator.next(3));
-console.log(generator.next(5));
+
+
+
+// let generator = data()
+
+// console.log([...generator]);
+
+// for (let vl of generator) {
+//     console.log(vl);
+// }
+// console.log(generator.next());
+// console.log(generator.next());
+
+// console.log(generator.return());
+
+
+// console.log(generator.next(2));
+// console.log(generator.next(5));
+// console.log(generator.next());
+
+// //!-- return
+
+// function* data() {
+//     return 1
+//     return
+// }
+
+
+
+let users = [{
+        id: 1,
+        name: 'oscar1'
+    },
+    {
+        id: 2,
+        name: 'oscar2'
+    },
+    {
+        id: 3,
+        name: 'oscar3'
+    },
+    {
+        id: 4,
+        name: 'oscar4'
+    },
+    {
+        id: 5,
+        name: 'oscar5'
+    },
+]
+console.log(users);
+
+function* gen() {
+    let i = users.length 
+    while (true) {
+        yield ++i
+    }
+}
+let userId = gen()
+
+
+function del(id) {
+    users = users.filter(vl => vl.id !== id)
+}
+
+
+function add(name) {
+    users = [...users, {
+        id: userId.next().value,
+        name: name
+    }]
+}
+
+del(4)
+del(2)
+add('jonas')
+add('jonas')
+add('jonas')
+del(6)
+add('name')
+
+console.log(users);
