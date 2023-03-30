@@ -348,3 +348,30 @@ const logIn = (lg, pw) => {
 // console.log(logIn('Asmo', '2312'));
 logIn('Umar', '2113')
 logIn('Salohiddin', '3421')
+
+let sum = 0
+const calc = function (a) {
+    sum += a
+    return (b) => {
+        return calc(b)
+    }
+
+}
+calc(4)(5)(7)(3)(6)(5)(10)
+console.log(sum);
+
+const oparations = function (type, ...other) {
+    switch (type) {
+        case "add":
+            return console.log(other.reduce((cur, value) => cur + value, 0));
+            break;
+        case "divide":
+            return console.log(other.reduce((cur, value) => cur / value));
+            break;
+        case "multiple":
+            return console.log(other.reduce((cur, value) => cur * value));
+            break;
+    }
+}
+
+oparations('multiple', 3, 4, 6, 6, 8, 10, 1, 2)

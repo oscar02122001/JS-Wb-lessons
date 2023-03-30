@@ -43,26 +43,12 @@ function* data() {
 
 
 
-let users = [{
-        id: 1,
-        name: 'oscar1'
-    },
-    {
-        id: 2,
-        name: 'oscar2'
-    },
-    {
-        id: 3,
-        name: 'oscar3'
-    },
-    {
-        id: 4,
-        name: 'oscar4'
-    },
-    {
-        id: 5,
-        name: 'oscar5'
-    },
+let users = [
+    {id: 1, name: 'oscar1'},
+    {id: 2, name: 'oscar2'},
+    {id: 3, name: 'oscar3'},
+    {id: 4, name: 'oscar4'},
+    {id: 5, name: 'oscar5'},
 ]
 console.log(users);
 
@@ -88,8 +74,6 @@ function add(name) {
 }
 
 del(4)
-del(2)
-add('jonas')
 add('jonas')
 add('jonas')
 del(6)
