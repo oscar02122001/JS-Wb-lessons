@@ -54,3 +54,37 @@ let getData = function () {
     })
 }
 getData()
+
+// Slider
+
+const slider = document.querySelector('.slider')
+const slides = document.querySelectorAll('.slides')
+const next = document.querySelector('.next')
+const prev = document.querySelector('.prev')
+
+let sSize = slides.length
+let currentSlide = 0;
+
+const goToSlide = function (slide) {
+    slides.forEach((s, i) => s.style.transform = `translateX(${100 * (i-slide)}%)`)
+}
+goToSlide(0)
+
+const goNext = function () {
+    if (currentSlide === sSize - 1) {
+        currentSlide = 0
+    } else {
+        currentSlide++
+    }
+    goToSlide(currentSlide)
+}
+const goPrev = function () {
+    if (currentSlide === 0) {
+        currentSlide = sSize - 1
+    } else {
+        currentSlide--
+    }
+    goToSlide(currentSlide)
+}
+next.addEventListener('click', goNext)
+prev.addEventListener('click', goPrev)

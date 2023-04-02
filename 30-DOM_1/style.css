@@ -7,7 +7,6 @@
     width: 500px;
     margin: 0 auto;
     align-items: center;
-
 }
 
 #title {
@@ -142,4 +141,30 @@ td:hover {
 
 .btn::after {
     transform: rotate(45deg);
+}
+
+
+.slider {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.slides {
+    position: absolute;
+}
+
+.buttons {
+    position: absolute;
+    z-index: 3;
+}
+
+.slideNum {
+    position: absolute;
+    margin: 0;
+    color: #fff;
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    bottom: 0;
 }
