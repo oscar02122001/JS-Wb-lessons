@@ -61,12 +61,15 @@ const slider = document.querySelector('.slider')
 const slides = document.querySelectorAll('.slides')
 const next = document.querySelector('.next')
 const prev = document.querySelector('.prev')
+const count = document.querySelector('.slideNum')
 
 let sSize = slides.length
 let currentSlide = 0;
 
 const goToSlide = function (slide) {
     slides.forEach((s, i) => s.style.transform = `translateX(${100 * (i-slide)}%)`)
+
+    count.innerHTML = `${sSize}/${currentSlide+1}`
 }
 goToSlide(0)
 
